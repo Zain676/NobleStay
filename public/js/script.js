@@ -123,3 +123,10 @@ if (filterWrapper) {
     }
   });
 }
+
+
+const searchForm = document.getElementById("searchForm");
+
+searchForm.addEventListener("submit", (req, res) => {
+  res.redirect("/listings");
+})
