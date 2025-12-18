@@ -1,11 +1,8 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
   "use strict";
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.querySelectorAll(".needs-validation");
 
-  // Loop over them and prevent submission
   Array.prototype.slice.call(forms).forEach(function (form) {
     form.addEventListener(
       "submit",
@@ -126,60 +123,3 @@ if (filterWrapper) {
     }
   });
 }
-
-// search
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   console.log("JS loaded"); // Check this in the browser console
-
-//   const searchForm = document.getElementById("searchForm");
-
-//   if (searchForm) {
-//     console.log("Search form found");
-
-//     searchForm.addEventListener("submit", async function (e) {
-//       e.preventDefault();
-//       const query = document.getElementById("searchInput").value.trim();
-//       console.log("Search query:", query);
-
-//       if (!query) return;
-
-//       try {
-//         const res = await fetch(`/listings?search=${encodeURIComponent(query)}`);
-//         const listings = await res.json();
-//         console.log("Listings received:", listings);
-
-//         const container = document.getElementById("listings-container");
-//         container.innerHTML = "";
-
-//         if (listings.length === 0) {
-//           container.innerHTML = "<p>No listings found.</p>";
-//           return;
-//         }
-
-//         listings.forEach((listing) => {
-//           const html = `
-//             <a href="/listings/${listing._id}" class="listing-link">
-//               <div class="card mt-4 listing-card">
-//                 <img src="${listing.image.url}" class="card-img-top" alt="${listing.title}" />
-//                 <div class="card-body mt-3">
-//                   <p class="card-text mb-4">
-//                     <b>${listing.title}</b><br />
-//                     &#8360; ${listing.price.toLocaleString("en-PK")} / night<br />
-//                     <i>${listing.category}</i>
-//                   </p>
-//                 </div>
-//               </div>
-//             </a>
-//           `;
-//           container.innerHTML += html;
-//         });
-//       } catch (err) {
-//         console.error("Search failed:", err);
-//       }
-//     });
-//   } else {
-//     console.log("Search form not found");
-//   }
-// });
-
