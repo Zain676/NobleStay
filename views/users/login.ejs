@@ -1,0 +1,36 @@
+<% layout("/layouts/biolerplate") %>
+
+<div class="row mt-4">
+    <h1 class="col-6 offset-3">Login</h1>
+    <div class="col-6 offset-3 login-form">
+        <form action="/login" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" class="form-control" id="username" name="username" required> 
+                <div class="valid-feedback">Looks good</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" id="password" name="password" required> 
+            </div>
+            <button class="btn btn-success">Login</button>
+        </form>
+    </div>
+</div>
+
+<script>
+  // Show loader on any form submit
+  document.querySelectorAll("form").forEach(form => {
+    form.addEventListener("submit", function () {
+      document.getElementById("loader-overlay").style.display = "flex";
+    });
+  });
+
+  // Show loader on delete link clicks (if using anchor with JS)
+  document.querySelectorAll(".show-loader").forEach(button => {
+    button.addEventListener("click", function () {
+      document.getElementById("loader-overlay").style.display = "flex";
+    });
+  });
+</script>
